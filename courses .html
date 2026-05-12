@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .courses {
+      margin: 10px 0;
+    }
+
+    .courses label {
+      display: block;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Course Registration</h2>
+  <form onsubmit="return validateCourses()">
+
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+
+    <select required>
+      <option value="">Select Level</option>
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+
+    <div class="courses">
+      <strong>Select Courses:</strong>
+      <label><input type="checkbox" name="course"> HTML</label>
+      <label><input type="checkbox" name="course"> CSS</label>
+      <label><input type="checkbox" name="course"> JavaScript</label>
+      <label><input type="checkbox" name="course"> Python</label>
+    </div>
+
+    <input type="date" required>
+
+    <button type="submit">Register</button>
+
+  </form>
+</div>
+
+<script>
+  function validateCourses() {
+    let courses = document.querySelectorAll('input[name="course"]:checked');
+    
+    if (courses.length === 0) {
+      alert("Please select at least one course!");
+      return false;
+    }
+    return true;
+  }
+</script>
+
+</body>
+</html>
