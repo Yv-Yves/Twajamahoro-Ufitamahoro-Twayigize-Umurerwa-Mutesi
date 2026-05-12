@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Registration Form</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 7px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e68900;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Book Registration</h2>
+
+  <form onsubmit="return validateForm()">
+
+    <input type="text" placeholder="Book Title" required>
+
+    <input type="text" placeholder="Author Name" required>
+
+    <input type="text" placeholder="ISBN Number" required>
+
+    <select required>
+      <option value="">Select Category</option>
+      <option>Fiction</option>
+      <option>Non-Fiction</option>
+      <option>Science</option>
+      <option>Technology</option>
+      <option>Education</option>
+    </select>
+
+    <input type="number" placeholder="Number of Pages" required>
+
+    <textarea placeholder="Short Description" rows="4"></textarea>
+
+    <input type="date" required>
+
+    <button type="submit">Register Book</button>
+
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    alert("Book registered successfully!");
+    return true;
+  }
+</script>
+
+</body>
+</html>
